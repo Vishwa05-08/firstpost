@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FirstLook - Choose Perfect Agency</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="js/app.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="topbar">
+  <div><i class="fas fa-home"></i> +880 1934 781924</div>
+  <div><i class="fas fa-envelope"></i> example@mail.com</div>
+  <div><i class="fas fa-clock"></i> Mon to Sat: 9am - 6pm</div>
+  <div class="social-icons">
+    <i class="fab fa-facebook"></i>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-linkedin"></i>
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="logo">FirstLook</div>
+  <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- Hero Section -->
+<!-- Hero Image Slider -->
+
+  <section class="hero-slider">
+    <div class="hero-images">
+      <div class="hero-slide active" style="background-image: url('img/pexels-eva-bronzini-7661184.jpg')">
+        <div class="hero-content">
+          <h1>Choose Perfect Agency</h1>
+          <p>Empowering your vision through innovation and teamwork.</p>
+          <a href="#about" class="btn">Explore More</a>
+        </div>
+      </div>
+      <div class="hero-slide" style="background-image: url('img/rebranding-6672112_1280.jpg')">
+        <div class="hero-content">
+          <h1>Creative Digital Solutions</h1>
+          <p>We deliver websites, strategy, and growth that matters.</p>
+          <a href="#services" class="btn">Discover Services</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+<!-- About Section -->
+<section class="about" id="about">
+  <div class="container">
+    <h2>About Our Agency</h2>
+    <p>We are a creative team passionate about growing your brand. With years of experience, we specialize in design, development, and digital marketing.</p>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Web Development</h3>
+        <p>Modern and responsive websites to take your business online.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-bullhorn"></i>
+        <h3>Marketing</h3>
+        <p>Effective marketing strategies to reach the right audience.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Brand Strategy</h3>
+        <p>Build a powerful brand identity that speaks for itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Team Section -->
+<section class="team" id="team">
+  <div class="container">
+    <h2>Meet Our Team</h2>
+    <div class="team-members">
+      <div class="member">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member">
+        <h3>John Doe</h3>
+        <p>CEO & Co-founder</p>
+      </div>
+      <div class="member">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Team Member">
+        <h3>Jane Smith</h3>
+        <p>Marketing Head</p>
+      </div>
+      <div class="member">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Team Member">
+        <h3>Alex Lee</h3>
+        <p>Lead Developer</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Gallery Section -->
+<section class="gallery">
+  <div class="container">
+    <h2>Our Work</h2>
+    <div class="gallery-grid">
+      <img src="https://source.unsplash.com/random/300x200?office" alt="">
+      <img src="https://source.unsplash.com/random/301x200?team" alt="">
+      <img src="https://source.unsplash.com/random/302x200?work" alt="">
+      <img src="https://source.unsplash.com/random/303x200?technology" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <h2>What Clients Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial">
+        <p>“This agency completely transformed our brand. Amazing service!”</p>
+        <h4>- Michael</h4>
+      </div>
+      <div class="testimonial">
+        <p>“Reliable, creative, and professional. We love working with them.”</p>
+        <h4>- Sarah</h4>
+      </div>
+      <div class="testimonial">
+        <p>“Outstanding digital marketing solutions. Highly recommended!”</p>
+        <h4>- Daniel</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form -->
+<section class="contact-section">
+  <div class="contact-container">
+    <!-- Left: Form -->
+    <div class="contact-form">
+      <h2>Get in touch</h2>
+      <p>Our friendly team would love to hear from you.</p>
+
+      <form>
+        <div class="form-group">
+          <input type="text" placeholder="Name *" required>
+          <input type="email" placeholder="Email *" required>
+        </div>
+        <input type="text" placeholder="Subject *" required>
+        <textarea placeholder="Your message *" rows="5" required></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Right: Contact Info -->
+    <div class="contact-info">
+      <div class="info-item">
+        <span class="icon"><i class="fa-solid fa-phone fa-beat-fade" style="color: #ff6d1f; font-size: 24px;"></i></span>
+        <div>
+          <h4>Phone</h4>
+          <p>+91 7683673732</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="icon"><i class=" fa-solid fa-envelope fa-fade" style="--fa-primary-color:#ff6d1f; --fa-secondary-color: #ff6d1f;"></i></span>
+        <div>
+          <h4>Mail</h4>
+          <p>vatsaAdithya@f1rstpost.com</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="icon"><i class="fa-duotone fa-solid fa-map-pin fa-bounce" style="--fa-primary-color: #ff7300; --fa-secondary-color: #ff7300;"></i></span>
+        <div>
+          <h4>Visit Our Office</h4>
+          <p>Khammam</p>
+        </div>
+      </div>
+      <img src="/img/undraw_chat-bot_c8iw.png" />
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <div class="container">
+    <h2>Subscribe to our Newsletter</h2>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 FirstLook. All Rights Reserved.</p>
+</footer>
+
+<button onclick="scrollToTop()" id="topBtn">⬆</button>
+
+
+</body>
+</html>
