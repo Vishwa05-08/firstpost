@@ -2,38 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="theme-color" content="#317EFB">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FirstLook - Choose Perfect Agency</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="js/app.js" defer></script>
+  <title>FirstLook - Choose The Perfect Agency</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@1&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="icon.png" type="image/png">
+
+  <!-- Google Fonts (Merriweather for headings, Roboto for body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- Your Custom CSS Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Your Custom JS (defer ensures it runs after the HTML is parsed) -->
+  <script src="/js/app.js" defer></script>
 </head>
 <body>
 
 <!-- Top Bar -->
 <div class="topbar">
-  <div><i class="fas fa-home"></i> +880 1934 781924</div>
+  <div><i class="fas fa-phone"></i> +880 1934 781924</div>
   <div><i class="fas fa-envelope"></i> example@mail.com</div>
   <div><i class="fas fa-clock"></i> Mon to Sat: 9am - 6pm</div>
   <div class="social-icons">
-    <i class="fab fa-facebook"></i>
-    <i class="fab fa-twitter"></i>
-    <i class="fab fa-instagram"></i>
-    <i class="fab fa-linkedin"></i>
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
   </div>
 </div>
 
 <!-- Navigation -->
-<nav class="navbar">
+<nav class="navbar" id="navbar">
   <div class="logo">FirstLook</div>
-  <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-  <ul class="nav-links">
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <ul class="nav-links" id="nav-links">
     <li><a href="#">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#team">Team</a></li>
+    <li><a href="#gallery">Our Work</a></li>
     <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -41,57 +57,48 @@
 
 
 <!-- Hero Section -->
-<!-- Hero Image Slider -->
-
-  <section class="hero-slider">
-    <div class="hero-images">
-      <div class="hero-slide active" style="background-image: url('img/pexels-eva-bronzini-7661184.jpg')">
-        <div class="hero-content">
-          <h1>Choose Perfect Agency</h1>
-          <p>Empowering your vision through innovation and teamwork.</p>
-          <a href="#about" class="btn">Explore More</a>
-        </div>
-      </div>
-      <div class="hero-slide" style="background-image: url('img/rebranding-6672112_1280.jpg')">
-        <div class="hero-content">
-          <h1>Creative Digital Solutions</h1>
-          <p>We deliver websites, strategy, and growth that matters.</p>
-          <a href="#services" class="btn">Discover Services</a>
-        </div>
-      </div>
-
+<section class="hero-slider">
+  <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');">
+    <div class="hero-content">
+      <h1>Choose The Perfect Agency</h1>
+      <p>Empowering your vision through innovation, strategy, and teamwork.</p>
+      <a href="#about" class="btn">Explore More</a>
     </div>
-  </section>
+  </div>
+  <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop');">
+    <div class="hero-content">
+      <h1>Creative Digital Solutions</h1>
+      <p>We deliver websites, branding, and growth that truly matters.</p>
+      <a href="#services" class="btn">Discover Services</a>
+    </div>
+  </div>
+</section>
 
 
 <!-- About Section -->
 <section class="about" id="about">
-  <div class="container">
-    <h2>About Our Agency</h2>
-    <p>We are a creative team passionate about growing your brand. With years of experience, we specialize in design, development, and digital marketing.</p>
-  </div>
+  <h2>About Our Agency</h2>
+  <p>We are a creative team passionate about growing your brand. With years of experience, we specialize in stunning design, robust development, and impactful digital marketing that delivers measurable results.</p>
 </section>
 
 <!-- Services Section -->
 <section class="services" id="services">
-  <div class="container">
-    <h2>Our Services</h2>
-    <div class="service-cards">
-      <div class="card">
-        <i class="fas fa-laptop-code"></i>
-        <h3>Web Development</h3>
-        <p>Modern and responsive websites to take your business online.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-bullhorn"></i>
-        <h3>Marketing</h3>
-        <p>Effective marketing strategies to reach the right audience.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-lightbulb"></i>
-        <h3>Brand Strategy</h3>
-        <p>Build a powerful brand identity that speaks for itself.</p>
-      </div>
+  <h2>Our Services</h2>
+  <div class="service-cards">
+    <div class="card">
+      <i class="fas fa-laptop-code"></i>
+      <h3>Web Development</h3>
+      <p>Modern and responsive websites to take your business online.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-bullhorn"></i>
+      <h3>Marketing</h3>
+      <p>Effective marketing strategies to reach the right audience.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-lightbulb"></i>
+      <h3>Brand Strategy</h3>
+      <p>Build a powerful brand identity that speaks for itself.</p>
     </div>
   </div>
 </section>
@@ -99,117 +106,127 @@
 
 <!-- Team Section -->
 <section class="team" id="team">
-  <div class="container">
-    <h2>Meet Our Team</h2>
-    <div class="team-members">
+  <h2>Meet Our Team</h2>
+  <div class="team-members">
+    <div class="team-member-container">
       <div class="member">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Photo of John Doe">
+      </div>
+      <div class="member-info">
         <h3>John Doe</h3>
         <p>CEO & Co-founder</p>
       </div>
+    </div>
+    <div class="team-member-container">
       <div class="member">
-        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Team Member">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Photo of Jane Smith">
+      </div>
+      <div class="member-info">
         <h3>Jane Smith</h3>
         <p>Marketing Head</p>
       </div>
+    </div>
+    <div class="team-member-container">
       <div class="member">
-        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Team Member">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Photo of Alex Lee">
+      </div>
+      <div class="member-info">
         <h3>Alex Lee</h3>
         <p>Lead Developer</p>
       </div>
     </div>
   </div>
 </section>
+
 <!-- Gallery Section -->
-<section class="gallery">
-  <div class="container">
-    <h2>Our Work</h2>
-    <div class="gallery-grid">
-      <img src="https://source.unsplash.com/random/300x200?office" alt="">
-      <img src="https://source.unsplash.com/random/301x200?team" alt="">
-      <img src="https://source.unsplash.com/random/302x200?work" alt="">
-      <img src="https://source.unsplash.com/random/303x200?technology" alt="">
+<section class="gallery" id="gallery">
+  <h2>Our Work</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/random/800x600?office" alt="Gallery image of an office">
+    </div>
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/random/800x600?team,meeting" alt="Gallery image of a team meeting">
+    </div>
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/random/800x600?work,desk" alt="Gallery image of a desk at work">
+    </div>
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/random/800x600?technology,code" alt="Gallery image of technology">
     </div>
   </div>
 </section>
 
 <!-- Testimonials Section -->
 <section class="testimonials" id="testimonials">
-  <div class="container">
-    <h2>What Clients Say</h2>
-    <div class="testimonial-cards">
-      <div class="testimonial">
-        <p>“This agency completely transformed our brand. Amazing service!”</p>
-        <h4>- Michael</h4>
-      </div>
-      <div class="testimonial">
-        <p>“Reliable, creative, and professional. We love working with them.”</p>
-        <h4>- Sarah</h4>
-      </div>
-      <div class="testimonial">
-        <p>“Outstanding digital marketing solutions. Highly recommended!”</p>
-        <h4>- Daniel</h4>
-      </div>
+  <h2>What Clients Say</h2>
+  <div class="testimonial-cards">
+    <div class="testimonial">
+      <p>“This agency completely transformed our online presence. The results were beyond our expectations. Amazing service!”</p>
+      <h4>- Michael B.</h4>
+    </div>
+    <div class="testimonial">
+      <p>“Reliable, creative, and incredibly professional. We absolutely love working with the FirstLook team.”</p>
+      <h4>- Sarah L.</h4>
+    </div>
+    <div class="testimonial">
+      <p>“Outstanding digital marketing solutions that provided immediate impact. Highly recommended to anyone!”</p>
+      <h4>- Daniel K.</h4>
     </div>
   </div>
 </section>
 
 <!-- Contact Form -->
-<section class="contact-section">
+<section class="contact-section" id="contact">
   <div class="contact-container">
-    <!-- Left: Form -->
     <div class="contact-form">
-      <h2>Get in touch</h2>
-      <p>Our friendly team would love to hear from you.</p>
+      <h2>Get in Touch</h2>
+      <p>Our friendly team would love to hear from you. Fill out the form and we'll get back to you shortly.</p>
 
-      <form>
+      <form action="#" method="POST">
         <div class="form-group">
-          <input type="text" placeholder="Name *" required>
-          <input type="email" placeholder="Email *" required>
+          <input type="text" name="name" placeholder="Name *" required>
+          <input type="email" name="email" placeholder="Email *" required>
         </div>
-        <input type="text" placeholder="Subject *" required>
-        <textarea placeholder="Your message *" rows="5" required></textarea>
+        <input type="text" name="subject" placeholder="Subject *" required>
+        <textarea name="message" placeholder="Your message *" rows="5" required></textarea>
         <button type="submit" class="submit-btn">Send Message</button>
       </form>
     </div>
 
-    <!-- Right: Contact Info -->
     <div class="contact-info">
       <div class="info-item">
-        <span class="icon"><i class="fa-solid fa-phone fa-beat-fade" style="color: #ff6d1f; font-size: 24px;"></i></span>
+        <span class="icon"><i class="fas fa-phone"></i></span>
         <div>
           <h4>Phone</h4>
-          <p>+91 7683673732</p>
+          <p>+91 76836 73732</p>
         </div>
       </div>
       <div class="info-item">
-        <span class="icon"><i class=" fa-solid fa-envelope fa-fade" style="--fa-primary-color:#ff6d1f; --fa-secondary-color: #ff6d1f;"></i></span>
+        <i class="fa-duotone fa-solid fa-envelope fa-flip fa-lg" style="--fa-primary-color: #e96d07; --fa-secondary-color: #e96d07;"></i>
         <div>
           <h4>Mail</h4>
           <p>vatsaAdithya@f1rstpost.com</p>
         </div>
       </div>
       <div class="info-item">
-        <span class="icon"><i class="fa-duotone fa-solid fa-map-pin fa-bounce" style="--fa-primary-color: #ff7300; --fa-secondary-color: #ff7300;"></i></span>
+        <i class="fa-solid fa-location-pin fa-bounce fa-lg" style="color: #eb5505;"></i>
         <div>
           <h4>Visit Our Office</h4>
-          <p>Khammam</p>
+          <p>Khammam, Telangana, India</p>
         </div>
       </div>
-      <img src="/img/undraw_chat-bot_c8iw.png" />
     </div>
   </div>
 </section>
 
 <!-- Newsletter -->
 <section class="newsletter">
-  <div class="container">
-    <h2>Subscribe to our Newsletter</h2>
-    <form class="newsletter-form">
-      <input type="email" placeholder="Enter your email">
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
+  <h2>Subscribe to our Newsletter</h2>
+  <form class="newsletter-form">
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
 </section>
 
 <!-- Footer -->
@@ -217,8 +234,8 @@
   <p>&copy; 2025 FirstLook. All Rights Reserved.</p>
 </footer>
 
-<button onclick="scrollToTop()" id="topBtn">⬆</button>
-
+<!-- Scroll to Top Button -->
+<button id="topBtn" title="Go to top">⬆</button>
 
 </body>
 </html>

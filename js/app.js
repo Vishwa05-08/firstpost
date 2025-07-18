@@ -1,63 +1,98 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Wait for the entire HTML document to be fully loaded and parsed
+document.addEventListener('DOMContentLoaded', () => {
+
+  // --- CACHE DOM ELEMENTS ---
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.getElementById('nav-links');
+  const menuToggle = document.getElementById('menu-toggle');
+  const topBtn = document.getElementById('topBtn');
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  const sectionsToAnimate = document.querySelectorAll('section:not(.hero-slider)');
+
+  // --- NAVIGATION ---
+
+  // 1. Mobile Menu Toggle
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // 2. Close mobile menu when a link is clicked
+  navLinks.addEventListener('click', () => {
+    if (navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+  });
+
+  // 3. Sticky Navbar on Scroll
+  const handleScroll = () => {
+    // Navbar style change
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+
+    // Scroll-to-top button visibility
+    if (window.scrollY > 500) {
+      topBtn.classList.add('show');
+    } else {
+      topBtn.classList.remove('show');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  // --- HERO SLIDER ---
   let currentSlide = 0;
-  const slides = document.querySelectorAll(".hero-slide");
 
   function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove("active");
+    heroSlides.forEach((slide, i) => {
+      slide.classList.remove('active');
       if (i === index) {
-        slide.classList.add("active");
+        slide.classList.add('active');
       }
     });
   }
 
   function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
+    currentSlide = (currentSlide + 1) % heroSlides.length;
     showSlide(currentSlide);
   }
 
-  setInterval(nextSlide, 5000); // Change slide every 5 seconds
-
-  function toggleMenu() {
-    const menu = document.querySelector(".nav-links");
-    menu.classList.toggle("active");
+  // Automatically change slide every 5 seconds (5000 milliseconds)
+  if (heroSlides.length > 1) {
+    setInterval(nextSlide, 5000);
   }
 
-  window.onscroll = function () {
-    const navbar = document.querySelector(".navbar");
-    const topBtn = document.getElementById("topBtn");
-    if (window.scrollY > 100) {
-      navbar.classList.add("sticky");
-      topBtn.style.display = "block";
-    } else {
-      navbar.classList.remove("sticky");
-      topBtn.style.display = "none";
-    }
+  // --- SCROLL TO TOP BUTTON ---
+  topBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // --- SCROLL-REVEAL ANIMATIONS ---
+  const revealSection = (entries, observer) => {
+    entries.forEach(entry => {
+      // If the section is intersecting the viewport
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Stop observing the section once it has been revealed
+        observer.unobserve(entry.target);
+      }
+    });
   };
 
-  // Attach scrollToTop only after DOM is ready
-  document.getElementById("topBtn").addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Create an observer to watch for sections entering the viewport
+  const sectionObserver = new IntersectionObserver(revealSection, {
+    root: null, // observes intersections relative to the viewport
+    threshold: 0.15, // trigger when 15% of the section is visible
   });
-});
-// Toggle nav menu on mobile
-const toggleBtn = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
 
-toggleBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
-
-// Close menu when link is clicked (optional enhancement)
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
+  // Observe each section
+  sectionsToAnimate.forEach(section => {
+    sectionObserver.observe(section);
   });
-});
 
-// Optional: Close when clicking outside nav
-window.addEventListener("click", (e) => {
-  if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
-    navLinks.classList.remove("active");
-  }
 });
