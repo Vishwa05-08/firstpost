@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="theme-color" content="#317EFB">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FirstLook - Choose The Perfect Agency</title>
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@1&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" href="icon.png" type="image/png">
@@ -26,6 +23,11 @@
   <script src="js/app.js" defer></script>
 </head>
 <body>
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="loader"></div>
+</div>
 
 <!-- Top Bar -->
 <div class="topbar">
@@ -57,19 +59,21 @@
 
 
 <!-- Hero Section -->
-<section class="hero-slider">
-  <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');">
+<section class="hero-slider" id="hero-slider">
+  <div class="hero-slide active">
+    <div class="hero-background" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');"></div>
     <div class="hero-content">
-      <h1>Choose The Perfect Agency</h1>
+      <h1 class="animated-headline">Choose The Perfect Agency</h1>
       <p>Empowering your vision through innovation, strategy, and teamwork.</p>
-      <a href="#about" class="btn">Explore More</a>
+      <a href="#about" class="btn magnetic-btn">Explore More</a>
     </div>
   </div>
-  <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop');">
+  <div class="hero-slide">
+    <div class="hero-background" style="background-image: url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop');"></div>
     <div class="hero-content">
-      <h1>Creative Digital Solutions</h1>
+      <h1 class="animated-headline">Creative Digital Solutions</h1>
       <p>We deliver websites, branding, and growth that truly matters.</p>
-      <a href="#services" class="btn">Discover Services</a>
+      <a href="#services" class="btn magnetic-btn">Discover Services</a>
     </div>
   </div>
 </section>
@@ -111,6 +115,11 @@
     <div class="team-member-container">
       <div class="member">
         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Photo of John Doe">
+        <div class="member-overlay">
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
       </div>
       <div class="member-info">
         <h3>John Doe</h3>
@@ -120,6 +129,10 @@
     <div class="team-member-container">
       <div class="member">
         <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Photo of Jane Smith">
+        <div class="member-overlay">
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
       </div>
       <div class="member-info">
         <h3>Jane Smith</h3>
@@ -129,6 +142,11 @@
     <div class="team-member-container">
       <div class="member">
         <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Photo of Alex Lee">
+        <div class="member-overlay">
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+        </div>
       </div>
       <div class="member-info">
         <h3>Alex Lee</h3>
@@ -157,22 +175,33 @@
   </div>
 </section>
 
+<!-- Parallax Break Section -->
+<section class="parallax">
+  <div class="parallax-content">
+    <h2>Driven by Creativity, Focused on Results.</h2>
+  </div>
+</section>
+
 <!-- Testimonials Section -->
 <section class="testimonials" id="testimonials">
   <h2>What Clients Say</h2>
-  <div class="testimonial-cards">
-    <div class="testimonial">
-      <p>“This agency completely transformed our online presence. The results were beyond our expectations. Amazing service!”</p>
-      <h4>- Michael B.</h4>
+  <div class="testimonial-slider-container">
+    <div class="testimonial-slides">
+      <div class="testimonial-slide active">
+        <p>“This agency completely transformed our online presence. The results were beyond our expectations. Amazing service!”</p>
+        <h4>- Michael B.</h4>
+      </div>
+      <div class="testimonial-slide">
+        <p>“Reliable, creative, and incredibly professional. We absolutely love working with the FirstLook team.”</p>
+        <h4>- Sarah L.</h4>
+      </div>
+      <div class="testimonial-slide">
+        <p>“Outstanding digital marketing solutions that provided immediate impact. Highly recommended to anyone!”</p>
+        <h4>- Daniel K.</h4>
+      </div>
     </div>
-    <div class="testimonial">
-      <p>“Reliable, creative, and incredibly professional. We absolutely love working with the FirstLook team.”</p>
-      <h4>- Sarah L.</h4>
-    </div>
-    <div class="testimonial">
-      <p>“Outstanding digital marketing solutions that provided immediate impact. Highly recommended to anyone!”</p>
-      <h4>- Daniel K.</h4>
-    </div>
+    <button class="testimonial-nav prev" id="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="testimonial-nav next" id="testimonial-next"><i class="fas fa-chevron-right"></i></button>
   </div>
 </section>
 
@@ -190,7 +219,7 @@
         </div>
         <input type="text" name="subject" placeholder="Subject *" required>
         <textarea name="message" placeholder="Your message *" rows="5" required></textarea>
-        <button type="submit" class="submit-btn">Send Message</button>
+        <button type="submit" class="submit-btn magnetic-btn">Send Message</button>
       </form>
     </div>
 
@@ -203,14 +232,14 @@
         </div>
       </div>
       <div class="info-item">
-        <i class="fa-duotone fa-solid fa-envelope fa-flip fa-lg" style="--fa-primary-color: #e96d07; --fa-secondary-color: #e96d07;"></i>
+        <span class="icon"><i class="fas fa-envelope"></i></span>
         <div>
           <h4>Mail</h4>
           <p>vatsaAdithya@f1rstpost.com</p>
         </div>
       </div>
       <div class="info-item">
-        <i class="fa-solid fa-location-pin fa-bounce fa-lg" style="color: #eb5505;"></i>
+        <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
         <div>
           <h4>Visit Our Office</h4>
           <p>Khammam, Telangana, India</p>
@@ -225,7 +254,7 @@
   <h2>Subscribe to our Newsletter</h2>
   <form class="newsletter-form">
     <input type="email" placeholder="Enter your email" required>
-    <button type="submit">Subscribe</button>
+    <button type="submit" class="magnetic-btn">Subscribe</button>
   </form>
 </section>
 
@@ -235,7 +264,27 @@
 </footer>
 
 <!-- Scroll to Top Button -->
-<button id="topBtn" title="Go to top">⬆</button>
+<button id="topBtn" title="Go to top" class="magnetic-btn">⬆</button>
+
+<!-- AI Chatbot -->
+<div class="chatbot">
+  <button class="chatbot-toggle" id="chatbot-toggle">
+    <i class="fas fa-comment-dots"></i>
+    <i class="fas fa-times"></i>
+  </button>
+  <div class="chatbot-window">
+    <div class="chatbot-header">
+      <h3>AI Assistant</h3>
+    </div>
+    <ul class="chatbot-messages" id="chatbot-messages">
+      <li class="message bot">Hello! How can I help you today?</li>
+    </ul>
+    <form class="chatbot-input" id="chatbot-form">
+      <input type="text" id="chatbot-input" placeholder="Ask a question..." autocomplete="off">
+      <button type="submit"><i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+</div>
 
 </body>
 </html>
