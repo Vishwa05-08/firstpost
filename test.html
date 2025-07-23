@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hover Card Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+  padding: 40px 30px;
+  border-radius: 8px;
+  width: 300px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background-color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card i {
+      font-size: 2rem;
+      color: #2563eb;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+      color: #111827;
+    }
+
+    .card p {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .details {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.4s ease, max-height 0.4s ease;
+    }
+
+    .card:hover .details {
+      opacity: 1;
+      max-height: 500px;
+    }
+
+    .details ul {
+      padding-left: 1.2rem;
+      margin: 0;
+      color: #374151;
+      font-size: 0.95rem;
+    }
+
+    .details ul li {
+      margin-bottom: 0.4rem;
+      list-style-type: disc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <i class="fa-solid fa-photo-film"></i>
+    <h3>Social Media Content & Management</h3>
+    <p>Modern and responsive websites to take your business online.</p>
+
+    <div class="details">
+      <ul>
+        <li>Instagram posts (static & carousel)</li>
+        <li>Festive & seasonal campaigns</li>
+        <li>Reels creation & editing</li>
+        <li>Content calendar planning</li>
+        <li>Captions, hooks & ad copy</li>
+        <li>Profile optimization</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
