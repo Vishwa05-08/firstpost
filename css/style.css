@@ -470,6 +470,16 @@ section h2 {
   margin-bottom: 10px;
 }
 
+.services p{
+  text-align: center;
+}
+
+.services .card p {
+  text-align: center;
+  margin: 10px 0;
+}
+
+
 /* =========================================
    TEAM SECTION
    ========================================= */
