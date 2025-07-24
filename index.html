@@ -15,12 +15,28 @@
 
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Your Custom CSS Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- Your Custom JS (defer ensures it runs after the HTML is parsed) -->
   <script src="js/app.js" defer></script>
+  
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    });
+  </script>
 </head>
 <body>
 
@@ -93,7 +109,7 @@ Creativity beats noise.
 Trends are tools, not shortcuts.
 
 
-Every brand deserves a standout first look — no matter its size.
+Every brand deserves a standout first look - no matter its size.
 
 
 "Let’s create something your audience can’t ignore."
@@ -173,7 +189,7 @@ Every brand deserves a standout first look — no matter its size.
      <div class="card">
       <i class="fas fa-pen-nib"></i>
       <h3> Content & Strategy</h3>
-      <p>Not just content — strategy that works.</p>
+      <p>Not just content - strategy that works.</p>
        <div class="details">
       <ul>
       <li>Blogs, website copy & storytelling</li>
@@ -186,6 +202,51 @@ Every brand deserves a standout first look — no matter its size.
   </div>
 </section>
 
+<!-- Why Choose Us Section -->
+<section class="why-choose-us" id="why-choose-us">
+  <div class="container">
+    <h2 class="section-title">Why Choose <span class="highlight">F1rstLook</span>?</h2>
+    <p class="section-subtitle">We go beyond the ordinary to deliver exceptional results that help your business grow in the digital world.</p>
+    
+    <div class="intro-text">
+    <p>We didn’t start F1RSTLOOK Digital to be “just another agency.”
+     We started because we trust our skills, our creativity, and our passion for building brands that stand out.
+     We’re a team that genuinely loves what we do.
+     Design, editing, social growth, web - it’s not just work, it’s what we’re best at.
+     Our strength isn’t a long client list yet.
+     It’s the fact that we’re driven by passion, backed by skill, and committed to proving what we can build for every brand we work with.
+     "Built on passion. Backed by skill."
+</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card" data-aos="fade-up">
+        <div class="icon-wrapper">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h3>Fast Delivery</h3>
+        <p>Quick turnaround times without compromising quality. We value your time and deliver with speed and precision.</p>
+      </div>
+      
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon-wrapper">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3>Innovation</h3>
+        <p>We don't follow trends – we set them. Our solutions make your brand stand out with creative excellence.</p>
+      </div>
+      
+      
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="icon-wrapper">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Expert Team</h3>
+        <p>Passionate professionals dedicated to bringing your vision to life with skill and care.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Team Section -->
 <section class="team" id="team">
